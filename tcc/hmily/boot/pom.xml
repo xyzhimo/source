@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~
+  ~ Copyright 2017-2018 549477611@qq.com(xiaoyu)
+  ~
+  ~ This copyrighted material is made available to anyone wishing to use, modify,
+  ~ copy, or redistribute it subject to the terms and conditions of the GNU
+  ~ Lesser General Public License, as published by the Free Software Foundation.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+  ~ or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License
+  ~ for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public License
+  ~ along with this distribution; if not, see <http://www.gnu.org/licenses/>.
+  ~
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.2.RELEASE</version>
+    </parent>
+
+    <groupId>com.hmily.boot</groupId>
+    <artifactId>hmily-tcc-demo-dubbo</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <modules>
+        <module>hmily-tcc-demo-dubbo-order</module>
+        <module>hmily-tcc-demo-dubbo-account</module>
+        <module>hmily-tcc-demo-dubbo-account-api</module>
+        <module>hmily-tcc-demo-dubbo-inventory-api</module>
+        <module>hmily-tcc-demo-dubbo-inventory</module>
+    </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+        <spring.version>5.0.7.RELEASE</spring.version>
+        <dubbo.version>2.6.2</dubbo.version>
+        <mongo.driver.version>3.5.0</mongo.driver.version>
+        <mysql-connector-java>5.1.46</mysql-connector-java>
+        <commons-lang3.version>3.3.2</commons-lang3.version>
+        <guava.version>21.0</guava.version>
+        <spring.data.mongodb.version>2.0.8.RELEASE</spring.data.mongodb.version>
+        <hessian.version>4.0.38</hessian.version>
+        <protostuff.version>1.0.8</protostuff.version>
+        <kryo.version>4.0.0</kryo.version>
+        <curator.version>4.0.1</curator.version>
+        <nettty.version>4.1.12.Final</nettty.version>
+        <commons.httpclient.version>3.0.1</commons.httpclient.version>
+        <httpclient.version>4.5.1</httpclient.version>
+        <okhttp.version>3.7.0</okhttp.version>
+        <gson.verions>2.6.2</gson.verions>
+        <springfox.version>2.6.1</springfox.version>
+        <lombok.version>1.16.14</lombok.version>
+        <motan.version>1.0.0</motan.version>
+        <disruptor.version>3.4.0</disruptor.version>
+        <hikaricp.version>3.2.0</hikaricp.version>
+        <eureka.version>1.4.5.RELEASE</eureka.version>
+
+    </properties>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.hmily.boot</groupId>
+                <artifactId>hmily-tcc-demo-dubbo-order</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hmily.boot</groupId>
+                <artifactId>hmily-tcc-demo-dubbo-inventory</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hmily.boot</groupId>
+                <artifactId>hmily-tcc-demo-dubbo-inventory-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hmily.boot</groupId>
+                <artifactId>hmily-tcc-demo-dubbo-account</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.hmily.boot</groupId>
+                <artifactId>hmily-tcc-demo-dubbo-account-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.16.14</version>
+            </dependency>
+            <!--hmily-->
+            <dependency>
+                <groupId>com.hmily.tcc</groupId>
+                <artifactId>hmily-tcc-annotation</artifactId>
+                <version>1.2.1-RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hmily.tcc</groupId>
+                <artifactId>hmily-tcc-spring-boot-starter-dubbo</artifactId>
+                <version>1.2.1-RELEASE</version>
+            </dependency>
+            <!--mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>2.0.2.RELEASE</version>
+            </dependency>
+            <!--aop支持-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>2.0.2.RELEASE</version>
+            </dependency>
+            <!--自动配置-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-configuration-processor</artifactId>
+                <version>2.0.2.RELEASE</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-autoconfigure</artifactId>
+                <version>2.0.2.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-jdbc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-tx</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java}</version>
+            </dependency>
+
+            <!-- dubbo -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- zkclient  -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>3.4.9</version>
+            </dependency>
+
+            <!-- zkclient  -->
+            <dependency>
+                <groupId>com.101tec</groupId>
+                <artifactId>zkclient</artifactId>
+                <version>0.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-bean-validators</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>
