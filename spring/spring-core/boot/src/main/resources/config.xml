@@ -4,5 +4,9 @@
        xsi:schemaLocation="
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
-    <bean class="base.SimpleBean"></bean>
+    <bean class="base.SimpleBean" autowire="byType">
+        <!--<property name="propertyBean" ref="propertyBean"/>-->
+    </bean>
+
+    <bean id="propertyBean" class="base.PropertyBean"/>
 </beans>
