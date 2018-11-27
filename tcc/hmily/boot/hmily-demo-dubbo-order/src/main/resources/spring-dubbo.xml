@@ -15,12 +15,4 @@
 
     <dubbo:protocol accesslog="true" name="dubbo" port="20886"/>
 
-    <dubbo:reference timeout="10000"
-                     interface="org.dromara.hmily.demo.dubbo.inventory.api.service.InventoryService"
-                     id="inventoryService"
-                     retries="0" check="false"/>
-    <dubbo:reference timeout="10000"
-                     interface="org.dromara.hmily.demo.dubbo.account.api.service.AccountService"
-                     id="accountService"
-                     retries="0" check="false"/>
 </beans>

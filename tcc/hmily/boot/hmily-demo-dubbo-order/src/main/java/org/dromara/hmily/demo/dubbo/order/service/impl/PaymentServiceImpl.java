@@ -18,6 +18,7 @@
 package org.dromara.hmily.demo.dubbo.order.service.impl;
 
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.dromara.hmily.annotation.Hmily;
 import org.dromara.hmily.common.exception.HmilyRuntimeException;
 import org.dromara.hmily.demo.dubbo.account.api.dto.AccountDTO;
@@ -50,17 +51,15 @@ public class PaymentServiceImpl implements PaymentService {
 
     private final OrderMapper orderMapper;
 
-    private final AccountService accountService;
+    @Reference
+    private AccountService accountService;
 
-    private final InventoryService inventoryService;
+    @Reference
+    private InventoryService inventoryService;
 
     @Autowired(required = false)
-    public PaymentServiceImpl(OrderMapper orderMapper,
-                              AccountService accountService,
-                              InventoryService inventoryService) {
+    public PaymentServiceImpl(OrderMapper orderMapper) {
         this.orderMapper = orderMapper;
-        this.accountService = accountService;
-        this.inventoryService = inventoryService;
     }
 
 

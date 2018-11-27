@@ -12,13 +12,4 @@
     <dubbo:registry protocol="zookeeper" address="192.168.1.84:2181"/>
 
     <dubbo:protocol accesslog="true" name="dubbo" port="20884"/>
-
-    <dubbo:service interface="org.dromara.hmily.demo.dubbo.account.api.service.AccountService"
-                   ref="accountService"/>
-
-    <dubbo:reference timeout="10000"
-                     interface="org.dromara.hmily.demo.dubbo.inventory.api.service.InventoryService"
-                     id="inventoryService"
-                     retries="0" check="false"/>
-
 </beans>

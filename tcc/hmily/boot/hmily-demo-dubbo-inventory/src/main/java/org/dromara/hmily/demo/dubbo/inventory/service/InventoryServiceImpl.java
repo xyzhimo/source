@@ -17,6 +17,7 @@
 
 package org.dromara.hmily.demo.dubbo.inventory.service;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import org.dromara.hmily.annotation.Hmily;
 import org.dromara.hmily.common.exception.HmilyRuntimeException;
 import org.dromara.hmily.demo.dubbo.inventory.api.dto.InventoryDTO;
@@ -26,14 +27,13 @@ import org.dromara.hmily.demo.dubbo.inventory.mapper.InventoryMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
 /**
  * @author xiaoyu
  */
-@Service("inventoryService")
+@Service
 @SuppressWarnings("all")
 public class InventoryServiceImpl implements InventoryService {
 

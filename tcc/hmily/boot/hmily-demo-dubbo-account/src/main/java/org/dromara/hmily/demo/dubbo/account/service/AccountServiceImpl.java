@@ -17,6 +17,8 @@
 
 package org.dromara.hmily.demo.dubbo.account.service;
 
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
 import org.dromara.hmily.annotation.Hmily;
 import org.dromara.hmily.demo.dubbo.account.api.dto.AccountDTO;
 import org.dromara.hmily.demo.dubbo.account.api.dto.AccountNestedDTO;
@@ -29,7 +31,6 @@ import org.dromara.hmily.demo.dubbo.inventory.api.service.InventoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
@@ -38,7 +39,7 @@ import java.util.Date;
 /**
  * @author xiaoyu
  */
-@Service("accountService")
+@Service
 @SuppressWarnings("all")
 public class AccountServiceImpl implements AccountService {
 
@@ -49,7 +50,7 @@ public class AccountServiceImpl implements AccountService {
 
     private final AccountMapper accountMapper;
 
-    @Autowired(required = false)
+    @Reference
     private InventoryService inventoryService;
 
     @Autowired(required = false)

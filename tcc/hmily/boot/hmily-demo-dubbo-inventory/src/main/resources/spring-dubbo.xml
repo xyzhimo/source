@@ -14,8 +14,4 @@
 
     <dubbo:protocol accesslog="true" name="dubbo" port="20885"/>
 
-    <dubbo:service interface="org.dromara.hmily.demo.dubbo.inventory.api.service.InventoryService"
-                   ref="inventoryService"/>
-
-
 </beans>

@@ -17,6 +17,7 @@
 
 package org.dromara.hmily.demo.dubbo.account;
 
+import com.alibaba.dubbo.config.spring.context.annotation.DubboComponentScan;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
@@ -31,6 +32,7 @@ import org.springframework.context.annotation.ImportResource;
 @SpringBootApplication
 @ImportResource({"classpath:spring-dubbo.xml"})
 @MapperScan("org.dromara.hmily.demo.dubbo.account.mapper")
+@DubboComponentScan("org.dromara.hmily.demo.dubbo.account.service")
 public class DubboHmilyAccountApplication {
 
     /**
