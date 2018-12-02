@@ -1,7 +1,7 @@
 package base;
 
-public class PropertyBean {
+public interface PropertyBean {
 
-
+    void send();
 
 }

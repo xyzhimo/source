@@ -5,11 +5,7 @@
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
-    <import resource="override2.xml" />
-    <import resource="override1.xml" />
+    <bean id="propertyBean" class="base.PropertyBean1"/>
 
-    <bean class="base.SimpleBean">
-        <property name="propertyBean" ref="propertyBean"/>
-    </bean>
-
+    <!--<bean name="propertyBean1;propertyBean2;propertyBean" class="base.PropertyBean1" />-->
 </beans>

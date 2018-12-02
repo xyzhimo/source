@@ -17,16 +17,24 @@
 
   3. 什么叫Bean？
 
-  4. BeanFactory和ApplicationContext的区别和联系
-   > BeanFactory 粗暴简单，可以理解为就是个 HashMap，Key 是 BeanName，Value 是 Bean 实例。通常只提供注册（put），获取（get）这两个功能。我们可以称之为 “低级容器”。
+     > BeanDefinition 就是我们所说的 Spring 的 Bean，我们自己定义的各个 Bean 其实会转换成一个个 BeanDefinition 存在于 Spring 的 BeanFactory 中。
+     >
+     > 所以，如果有人问你 Bean 是什么的时候，你要知道 Bean 在代码层面上是 BeanDefinition 的实例。
+     >
+     > BeanDefinition 中保存了我们的 Bean 信息，比如这个 Bean 指向的是哪个类、是否是单例的、是否懒加载、这个 Bean 依赖了哪些 Bean 等等。
 
-  > ApplicationContext 可以称之为 “高级容器”。因为他比 BeanFactory 多了更多的功能。他继承了多个接口。因此具备了更多的功能。例如资源的获取，支持多种消息（例如 JSP tag 的支持），对 BeanFactory 多了工具级别的支持等待。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。
-  4. BeanFactory类图关系和ApplicationContext的类图关系
+  4. BeanFactory和ApplicationContext的区别和联系
+
+     > BeanFactory 粗暴简单，可以理解为就是个 HashMap，Key 是 BeanName，Value 是 Bean 实例。通常只提供注册（put），获取（get）这两个功能。我们可以称之为 “低级容器”。
+
+     > ApplicationContext 可以称之为 “高级容器”。因为他比 BeanFactory 多了更多的功能。他继承了多个接口。因此具备了更多的功能。例如资源的获取，支持多种消息（例如 JSP tag 的支持），对 BeanFactory 多了工具级别的支持等待。所以你看他的名字，已经不是 BeanFactory 之类的工厂了，而是 “应用上下文”， 代表着整个大容器的所有功能。
+
+  5. BeanFactory类图关系和ApplicationContext的类图关系
 
      先看下图（摘自:[http://singleant.iteye.com/blog/1177358）](http://singleant.iteye.com/blog/1177358%EF%BC%89)
 
-     ![](/Users/xiaoyizhi/dev/source/spring/spring-core/notes/spring-ioc类图.jpg)
+     ![](./spring-ioc类图.jpg)
 
-  5. Spring是怎么加载Bean到容器的，其中的依赖关系是怎么弄的
+  6. Spring是怎么加载Bean到容器的，其中的依赖关系是怎么弄的
 
-  6. 循环依赖呢？
+  7. 循环依赖呢？
