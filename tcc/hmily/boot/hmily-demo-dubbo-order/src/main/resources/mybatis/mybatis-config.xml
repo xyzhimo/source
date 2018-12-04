@@ -7,5 +7,6 @@
     </properties>
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="useGeneratedKeys" value="true" />
     </settings>
 </configuration>	

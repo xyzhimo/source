@@ -51,10 +51,10 @@ public class PaymentServiceImpl implements PaymentService {
 
     private final OrderMapper orderMapper;
 
-    @Reference
+    @Reference(retries = -1)
     private AccountService accountService;
 
-    @Reference
+    @Reference(retries = -1)
     private InventoryService inventoryService;
 
     @Autowired(required = false)
