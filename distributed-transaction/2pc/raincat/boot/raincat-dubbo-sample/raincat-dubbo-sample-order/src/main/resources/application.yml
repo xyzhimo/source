@@ -1,0 +1,44 @@
+server:
+  port: 8086
+  contextPath: /
+  address: 0.0.0.0
+
+spring:
+    datasource:
+        driver-class-name:  com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/order?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 123456
+    application:
+      name: order-service
+org:
+   dromara:
+     raincat:
+       txManagerUrl: http://localhost:8761
+       serializer: kroy
+       nettySerializer: kroy
+       compensation: true
+       compensationCacheType : db
+       txDbConfig :
+              driverClassName  : com.mysql.jdbc.Driver
+              url :  jdbc:mysql://127.0.0.1:3306/tx?useUnicode=true&amp;characterEncoding=utf8
+              username : root
+              password : 123456
+mybatis:
+  type-aliases-package: org.dromara.raincat.dubbo.sample.order.api.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+
+logging:
+    level:
+        root: error
+        org.springframework.web: info
+        org.apache.ibatis: info
+        org.dromara.raincat.bonuspoint: info
+        org.dromara.raincat.lottery: debug
+        org.dromara.raincat: debug
+        io.netty: info
+
+    path: "./logs"
+

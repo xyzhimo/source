@@ -1,0 +1,31 @@
+server:
+  port: 8082
+  contextPath: /
+  address: 0.0.0.0
+
+spring:
+    datasource:
+        driver-class-name:  com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/stock?useUnicode=true&characterEncoding=utf8
+        username: root
+        password: 123456
+    application:
+      name: stock-service
+
+mybatis:
+  type-aliases-package: org.dromara.raincat.dubbo.sample.stock.api.entity
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+logging:
+    level:
+        root: error
+        org.springframework.web: info
+        org.apache.ibatis: debug
+        org.dromara.raincat.bonuspoint: debug
+        org.dromara.raincat.lottery: debug
+        org.dromara.raincat: debug
+
+    path: "./logs"
+
+
